@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-pug",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "esbuild plugin to load jade/pug files",
   "main": "src/index.js",
   "author": "Adam Berg",
