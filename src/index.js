@@ -7,7 +7,7 @@ const pluginPug = () => ({
 		build.onLoad({ filter: /\.jade$/ }, async args => {
 			let template = await fs.promises.readFile(args.path, 'utf8');
 
-      const contents = pug.compile(template)
+      const contents = pug.compile(template)()
 
 			return { contents, loader: "text" };
 		});
