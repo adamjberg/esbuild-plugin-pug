@@ -13,8 +13,6 @@ const pluginPug = () => ({
 
       const contents = `${compiled}\n\nexport default template;`;
 
-      console.log("contents", contents);
-
       return { contents, loader: "js" };
     });
   },
