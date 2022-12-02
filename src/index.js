@@ -7,9 +7,15 @@ const pluginPug = () => ({
     build.onLoad({ filter: /\.(jade|pug)$/ }, async (args) => {
       let template = await fs.promises.readFile(args.path, "utf8");
 
-      const contents = pug.compile(template, { filename: args.path })();
+      const compiled = pug.compileClient(template, {
+        filename: args.path,
+      });
 
-      return { contents, loader: "text" };
+      const contents = `${compiled}\n\nexport default template;`;
+
+      console.log("contents", contents);
+
+      return { contents, loader: "js" };
     });
   },
 });
